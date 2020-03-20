@@ -3,11 +3,21 @@ import java.util.ArrayList;
 public class Exercises {
 
   public int findMe(int[] list, int target) {
+	for(int i = 0; i < list.length; i ++) {
+		if(list[i] == target) {
+			return i;
+		}
+	}
     return -1;
   }
 
   public int findMe(ArrayList<String> list, String target) {
-    return -1;
+	  for(int i = 0; i < list.size(); i ++) {
+			if(list.get(i) == target) {
+				return i;
+			}
+		}
+	  return -1;
   }
 
   public int findMeFaster(ArrayList<Integer> list, int target) {
