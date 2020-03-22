@@ -65,7 +65,41 @@ public class Exercises {
   }
 
   public int[] bubble(int[] list, boolean ascending) {
-    return null;
+	  if (list == null) {
+          return null;
+      }
+	  if(ascending) {
+		  int lastIndex = list.length - 1;
+		  boolean swapped = false;
+		  do {
+			  swapped = false;
+              for (int i = 0; i < lastIndex; i++) {
+                  if (list[i] > list[i + 1]) {
+                      int temp = list[i];
+                      list[i] = list[i + 1];
+                      list[i + 1] = temp;
+                      swapped = true;
+                  }
+              }
+              lastIndex--;
+		  } while(swapped == true);
+	  } else {
+		  int lastIndex = list.length - 1;
+          boolean swapped = true;
+          while (swapped) {
+              swapped = false;
+              for (int i = 0; i < lastIndex; i++) {
+                  if (list[i] < list[i + 1]) {
+                      int temp = list[i];
+                      list[i] = list[i + 1];
+                      list[i + 1] = temp;
+                      swapped = true;
+                  }
+              }
+              lastIndex--;
+          }
+      }
+      return list;
   }
 
   public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
