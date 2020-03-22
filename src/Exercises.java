@@ -167,13 +167,20 @@ public class Exercises {
 	  if(list == null) {
 		  return null;
 	  }
-	  for(int i = 0; i < list.size(); i ++) {
-		  boolean isSorted = false;
-		  for(int j = i; j > 0; j --) {
-			  
-		  }
-	  }
-	  return null;
+	  int nullCounter = 0;
+      ArrayList<Integer> goodList = new ArrayList<Integer>();
+      for (int i = 0; i < list.size(); i++) {
+          if (list.get(i) == null) {
+              nullCounter++;
+          } else {
+              goodList.add(list.get(i));
+          }
+      }
+      
+      for (int i = 0; i < nullCounter; i++) {
+          goodList.add(null);
+      }
+      return goodList;
   }
 
   public String[] insertion(String[] list, boolean ascending) {
