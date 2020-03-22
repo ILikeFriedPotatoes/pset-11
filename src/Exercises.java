@@ -106,12 +106,74 @@ public class Exercises {
 	  if (list == null) {
           return null;
       }
-	  
-	  return null;
+
+      int nullCounter = 0;
+      ArrayList<String> sortedList = new ArrayList<String>();
+      for (int i = 0; i < list.size(); i++) {
+          if (list.get(i) == null) {
+              nullCounter++;
+          } else {
+              sortedList.add(list.get(i));
+          }
+      }
+      if (ascending) {
+          int lastIndex = sortedList.size() - 1;
+          boolean swapped = true;
+          while (swapped) {
+              swapped = false;
+              for (int i = 0; i < lastIndex; i++) {
+                  if (sortedList.get(i) == null) {
+                      sortedList.add(sortedList.remove(i));
+                  } else {
+                      if (sortedList.get(i).compareTo(sortedList.get(i + 1)) > 0) {
+                          String temp = sortedList.get(i);
+                          sortedList.set(i, sortedList.get(i + 1));
+                          sortedList.set(i + 1, temp);
+                          swapped = true;
+                      }
+                  }
+              }
+              lastIndex--;
+          }
+      } else {
+          int lastIndex = sortedList.size() - 1;
+          boolean swapped = true;
+          while (swapped) {
+              swapped = false;
+              for (int i = 0; i < lastIndex; i++) {
+                  if (sortedList.get(i) == null) {
+                      sortedList.add(sortedList.remove(i));
+                  } else {
+                      if (sortedList.get(i).compareTo(sortedList.get(i + 1)) < 0) {
+                          String temp = sortedList.get(i);
+                          sortedList.set(i, sortedList.get(i + 1));
+                          sortedList.set(i + 1, temp);
+                          swapped = true;
+                      }
+                  }
+              }
+              lastIndex--;
+          }
+      }
+      
+      for (int i = 0; i < nullCounter; i++) {
+          sortedList.add(null);
+      }
+
+      return sortedList;
   }
 
   public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
-    return null;
+	  if(list == null) {
+		  return null;
+	  }
+	  for(int i = 0; i < list.size(); i ++) {
+		  boolean isSorted = false;
+		  for(int j = i; j > 0; j --) {
+			  
+		  }
+	  }
+	  return null;
   }
 
   public String[] insertion(String[] list, boolean ascending) {
