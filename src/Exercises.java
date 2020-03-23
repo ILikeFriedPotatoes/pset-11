@@ -239,11 +239,12 @@ public class Exercises {
               i++;
           }
 	  }
-	  
 	  return list;
   }
 
   public int[] selection(int[] list, boolean ascending) {
+	  
+	  
     return null;
   }
 
