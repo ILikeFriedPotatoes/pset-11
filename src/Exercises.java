@@ -214,6 +214,8 @@ public class Exercises {
           return null;
       }
 	  
+	  
+	  
 	  return list;
   }
 
