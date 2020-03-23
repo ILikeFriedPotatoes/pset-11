@@ -432,8 +432,47 @@ public class Exercises {
   }
   //incomplete
   public String[] combine(String[] firstList, String[] secondList, boolean ascending) {
-  
-	  
-	  return null;
+	  String[] combination = new String[firstList.length + secondList.length];
+      int firstLocation = 0;
+      int secondLocation = 0;
+      int combineLocation = 0;
+    
+      while (firstLocation < firstList.length && secondLocation < secondList.length) {
+          if (ascending) {
+              if (firstList[firstLocation].compareTo(secondList[secondLocation]) < 0) {
+                  combination[combineLocation] = firstList[firstLocation];
+                  firstLocation++;
+                  combineLocation++;
+              } else {
+                  combination[combineLocation] = secondList[secondLocation];
+                  secondLocation++;
+                  combineLocation++;
+              }
+          } else {
+              if (firstList[firstLocation].compareTo(secondList[secondLocation]) > 0) {
+                  combination[combineLocation] = firstList[firstLocation];
+                  firstLocation++;
+                  combineLocation++;
+              } else {
+                  combination[combineLocation] = secondList[secondLocation];
+                  secondLocation++;
+                  combineLocation++;
+              }
+          }
+      }        
+
+      while (firstLocation == firstList.length && secondLocation != secondList.length) {
+          combination[combineLocation] = secondList[secondLocation];
+          secondLocation++;
+          combineLocation++;
+      }
+
+      while (secondLocation == secondList.length && firstLocation != firstList.length) {
+          combination[combineLocation] = firstList[firstLocation];
+          firstLocation++;
+          combineLocation++;
+      }
+
+      return combination;
   }
 }
