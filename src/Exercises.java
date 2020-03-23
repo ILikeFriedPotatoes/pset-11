@@ -281,7 +281,13 @@ public class Exercises {
   }
 
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
-    return null;
+	  if (list == null) {
+          return null;
+      }
+	  
+	  ArrayList<String> sortedList = new ArrayList<String>();
+	  
+	  return sortedList;
   }
 
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
