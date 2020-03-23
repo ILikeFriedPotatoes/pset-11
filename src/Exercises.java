@@ -285,8 +285,51 @@ public class Exercises {
           return null;
       }
 	  
+	  int nullCounter = 0;
 	  ArrayList<String> sortedList = new ArrayList<String>();
+	  for (int i = 0; i < list.size(); i++) {
+          if (list.get(i) == null) {
+              nullCounter++;
+          } else {
+              sortedList.add(list.get(i));
+          }
+      }
 	  
+	  if (ascending) {
+          int i = 0;
+          int end = sortedList.size();
+          while (i < end) {
+              int minIndex = i;
+              for (int j = i; j < end; j++) {
+                  if (sortedList.get(minIndex).compareTo(sortedList.get(j)) > 0) {
+                      minIndex = j;
+                  }
+              }
+              String temp = sortedList.get(minIndex);
+              sortedList.set(minIndex, sortedList.get(i));
+              sortedList.set(i, temp);
+              i++;
+          }
+      } else {
+          int i = 0;
+          int end = sortedList.size();
+          while (i < end) {
+              int minIndex = i;
+              for (int j = i; j < end; j++) {
+                  if (sortedList.get(minIndex).compareTo(sortedList.get(j)) < 0) {
+                      minIndex = j;
+                  }
+              }
+              String temp = sortedList.get(minIndex);
+              sortedList.set(minIndex, sortedList.get(i));
+              sortedList.set(i, temp);
+              i++;
+          }
+      }
+
+      for (int i = 0; i < nullCounter; i++) {
+          sortedList.add(null);
+      }
 	  return sortedList;
   }
 
