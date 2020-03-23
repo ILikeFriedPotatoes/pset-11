@@ -243,9 +243,13 @@ public class Exercises {
   }
 
   public int[] selection(int[] list, boolean ascending) {
-	  
-	  
-    return null;
+	  if (list == null) {
+          return null;
+      }
+	  if (ascending) {
+		  
+	  }
+    return list;
   }
 
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
