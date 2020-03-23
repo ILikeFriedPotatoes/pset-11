@@ -336,6 +336,44 @@ public class Exercises {
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
     return null;
   }
+  
+  public ArrayList<Integer> combine(ArrayList<Integer> firstList, ArrayList<Integer> secondList, boolean ascending) {
+      ArrayList<Integer> combination = new ArrayList<Integer>();
+      int firstLocation = 0;
+      int secondLocation = 0;
+    
+      while (firstLocation < firstList.size() && secondLocation < secondList.size()) {
+          if (ascending) {
+              if (firstList.get(firstLocation) < secondList.get(secondLocation)) {
+                  combination.add(firstList.get(firstLocation));
+                  firstLocation++;
+              } else {
+                  combination.add(secondList.get(secondLocation));
+                  secondLocation++;
+              }
+          } else {
+              if (firstList.get(firstLocation) > secondList.get(secondLocation)) {
+                  combination.add(firstList.get(firstLocation));
+                  firstLocation++;
+              } else {
+                  combination.add(secondList.get(secondLocation));
+                  secondLocation++;
+              }
+          }
+      }
+      
+      while (firstLocation == firstList.size() && secondLocation != secondList.size()) {
+          combination.add(secondList.get(secondLocation));
+          secondLocation++;
+      }
+
+      while (secondLocation == secondList.size() && firstLocation != firstList.size()) {
+          combination.add(firstList.get(firstLocation));
+          firstLocation++;
+      }
+
+      return combination;
+  }
 
   public String[] merge(String[] list, boolean ascending) {
     return null;
