@@ -409,6 +409,31 @@ public class Exercises {
   }
 
   public String[] merge(String[] list, boolean ascending) {
-    return null;
+	  if (list == null) {
+          return null;
+      }
+
+      if (list.length == 1) {
+          return list;
+      }
+	  
+      String[] firstList = new String[list.length/2];
+      String[] secondList = new String[(list.length - (list.length/2))];
+
+      for (int i = 0; i < (list.length/2); i++) {
+          firstList[i] = list[i];
+      }
+      for (int i = 0; i < secondList.length; i++) {
+          secondList[i] = list[i + (list.length/2)];
+      }
+
+      String[] combined = combine(merge(firstList, ascending), merge(secondList, ascending), ascending);
+      return combined;
+  }
+  //incomplete
+  public String[] combine(String[] firstList, String[] secondList, boolean ascending) {
+  
+	  
+	  return null;
   }
 }
