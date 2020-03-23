@@ -247,7 +247,20 @@ public class Exercises {
           return null;
       }
 	  if (ascending) {
-		  
+		  int i = 0;
+		  int end = list.length;
+		  while(i < end) {
+			  int minIndex = i;
+              for (int j = i; j < end; j++) {
+                  if (list[minIndex] > list[j]) {
+                      minIndex = j;
+                  }
+              }
+              int temp = list[minIndex];
+              list[minIndex] = list[i];
+              list[i] = temp;
+              i++;
+		  }
 	  }
     return list;
   }
